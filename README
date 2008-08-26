@@ -1,12 +1,42 @@
 ActsAsVideoclub
 ===============
 
-todo
+Allows for videos to be added to any model, with a helper for showing them on views
+
+Right now it supports YouTube and Vimeo APIs, but adding additional sources is something trivial.
 
 
-Example
-=======
+== Resources
 
-todo
+Install
+ * Run the following command:
+ 
+ script/plugin install git://github.com/linkingpaths/acts_as_videoclub.git
+ 
+== Usage
+ 
+ * Make your ActiveRecord model act as videoclub.
+ 
+	class Flat < ActiveRecord::Base    
+	  acts_as_videoclub
+	end
+ 
+ * Add a video
+
+	XXXX
+ 
+ * Show a video
+ 
+	XXXX
+
+== Credits
+
+XXXXX
+
+== More
+
+http://github.com/linkingpaths/acts_as_videoclub
+http://github.com/linkingpaths/acts_as_videoclub/wikis
+
 
 Copyright (c) 2008 Linking Paths, released under the MIT license
