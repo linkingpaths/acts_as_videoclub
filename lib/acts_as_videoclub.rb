@@ -1,3 +1,5 @@
+require 'videoclub_helper'
+
 module LinkingPaths
   module Acts #:nodoc:
     module Videoclub #:nodoc:
@@ -24,3 +26,7 @@ module LinkingPaths
     end
   end
 end
+
+ActiveRecord::Base.send :include, LinkingPaths::Acts::Videoclub
+
+ActionView::Base.send :include, LinkingPaths::Videoclub::Helper
