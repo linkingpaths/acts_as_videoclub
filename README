@@ -3,7 +3,7 @@ ActsAsVideoclub
 
 Allows for videos to be added to any model, with a helper for showing them on views
 
-Right now it supports YouTube and Vimeo APIs, but adding additional sources is something trivial.
+Right now it supports Google Videos, YouTube and Vimeo APIs, but adding additional sources is something trivial.
 
 
 == Resources
@@ -13,6 +13,10 @@ Install
  
  script/plugin install git://github.com/linkingpaths/acts_as_videoclub.git
  
+ * Generate migration:
+ 
+ ruby script/generate acts_as_videclub_migration
+ 
 == Usage
  
  * Make your ActiveRecord model act as videoclub.
@@ -20,18 +24,32 @@ Install
 	class Flat < ActiveRecord::Base    
 	  acts_as_videoclub
 	end
+	
+	Now you have the relationship: 
+	
+	  has_many :videos, :as => :resource
+	 
+	and method:
+	
+	  has_videos?
  
  * Add a video
 
-	XXXX
+	  video = @flat.videos.build(params[:video][:source_url]) unless params[:video][:source_url].blank?
  
- * Show a video
+  or something like this
+  
+    video = Video.new(:source_url => params[:video][:source_url],
+                      :title => params[:video][:title], 
+                      :resource => @flat)
+    video.save
+    
+ * Show a video embeded
  
-	XXXX
+	video_embed_code(@flat.videos.first, options)
+	
+	Options accepted: width, height
 
-== Credits
-
-XXXXX
 
 == More
 

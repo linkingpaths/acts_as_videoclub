@@ -7,7 +7,6 @@ class ActsAsVideoclubMigration < ActiveRecord::Migration
       t.string  :description
       t.integer :resource_id
       t.string  :resource_type
-
       t.timestamps
     end
   end

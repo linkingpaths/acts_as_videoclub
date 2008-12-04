@@ -1,0 +1,9 @@
+Description:
+    The migration generator creates a migration to add the activities table to your database and takes no arguments.
+
+Example:
+    ./script/generate acts_as_videclub_migration
+	
+	Migration:  db/migrate/acts_as_videoclub_migration.rb
+	
+	The Video model lives in the lib directory of this plugin. You can move that model into your models directory and modify it if you like.
