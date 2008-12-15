@@ -3,7 +3,7 @@ ActsAsVideoclub
 
 Allows for videos to be added to any model, with a helper for showing them on views
 
-Right now it supports Google Videos, YouTube and Vimeo APIs, but adding additional sources is something trivial.
+Right now it supports Google Videos, Dailymotion, YouTube and Vimeo APIs, but adding additional sources is something trivial.
 
 
 == Resources

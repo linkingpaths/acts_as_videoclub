@@ -39,8 +39,19 @@ module LinkingPaths
             <param name="movie" value="http://www.vimeo.com/moogaloop.swf?clip_id=-#{id}&amp;server=www.vimeo.com&amp;fullscreen=1&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=" />
           </object>
           EOS
+        when /dailymotion/
+          video.source_url =~ /video\/([^&]+)/
+          id = $1
+          <<-EOS
+          <object width="#{options[:width]}" height="#{options[:height]}">
+            <param name="movie" value="http://www.dailymotion.com/swf/#{id}&related=1"></param>
+            <param name="allowFullScreen" value="true"></param>
+            <param name="allowScriptAccess" value="always"></param>
+            <embed src="http://www.dailymotion.com/swf/#{id}&related=1" type="application/x-shockwave-flash" width="#{options[:width]}" height="#{options[:height]}" allowFullScreen="true" allowScriptAccess="always"></embed>
+          </object>
+          EOS
         else
-          "Video service is not supported or the URL is not valid. Only Google Videos, Vimeo and youtube are supported (#{video.source_url})"
+          "Video service is not supported or the URL is not valid. Only Google Videos, Vimeo, Dailymotion and youtube are supported (#{video.source_url})"
         end
       end
 
