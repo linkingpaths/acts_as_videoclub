@@ -20,13 +20,10 @@ module LinkingPaths
           </object>
           EOS
         when /google/
-          puts "---------------"
-          puts "got google"
-          puts "---------------"
-          video.source_url =~ /docid=-([^&]+)/
+          video.source_url =~ /docid=([^&]+)/i
           id = $1
           <<-EOS
-          <embed id="VideoPlayback" src="http://video.google.com/googleplayer.swf?docid=-#{id}&hl=es&fs=true" style="width:#{options[:width]}px;height:#{options[:height]}px" allowFullScreen="true" allowScriptAccess="always" type="application/x-shockwave-flash"> </embed>
+          <embed id="VideoPlayback" src="http://video.google.com/googleplayer.swf?docid=#{id}&fs=true" style="width:#{options[:width]}px;height:#{options[:height]}px" allowFullScreen="true" allowScriptAccess="always" type="application/x-shockwave-flash"> </embed>
           EOS
         when /vimeo/
           video.source_url =~ /vimeo.com\/([^&]+)/
