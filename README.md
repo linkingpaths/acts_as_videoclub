@@ -57,4 +57,4 @@ http://github.com/linkingpaths/acts_as_videoclub
 http://github.com/linkingpaths/acts_as_videoclub/wikis
 
 
-Copyright (c) 2008 Linking Paths, released under the MIT license
+Copyright (c) 2008-2020 Linking Paths, released under the MIT license
